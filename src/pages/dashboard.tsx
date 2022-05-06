@@ -29,11 +29,11 @@ export default function Dashboard() {
             <Sidebar />
 
             <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start" h={400}>
-               <Box p="8" bg="gray.800" borderRadius={8}>
+               <Box p={["6", "8"]} bg="gray.800" borderRadius={8}>
                   <Text fontSize="lg" mb="4" color="cyan.500">Subscribers of the week</Text>
                   <Chart type="area" height={160} options={options} series={series}/>
                </Box>
-               <Box p="8" bg="gray.800" borderRadius={8}>
+               <Box p={["6", "8"]} bg="gray.800" borderRadius={8}>
                   <Text fontSize="lg" mb="4" color="cyan.500">Opening rate</Text>
                   <Chart type="area" height={160} options={options} series={series}/>
                </Box>

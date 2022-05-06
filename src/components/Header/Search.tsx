@@ -1,7 +1,15 @@
-import { Flex, Input, Icon } from "@chakra-ui/react";
+import { Flex, Input, Icon, useBreakpointValue } from "@chakra-ui/react";
 import { IoIosSearch } from "react-icons/io";
 
-export function Search() {
+interface SearchProps {
+  widenInput: boolean;
+}
+
+export function Search({ widenInput }: SearchProps) {
+  const isSmallScreen = useBreakpointValue({
+    base: false,
+    lg: true
+  })
   return (
     <Flex
       as="label"
@@ -16,7 +24,8 @@ export function Search() {
       bg="gray.800"
       borderRadius="full"
     >
-      <Input
+      {isSmallScreen ? (
+        <Input
         color="cyan.500"
         variant="unstyled"
         px="4"
@@ -24,6 +33,18 @@ export function Search() {
         placeholder="Search our cyberboard"
         _placeholder={{ color: "cyan.800" }}
       />
+      ) : 
+      <Input
+      color="cyan.500"
+      variant="unstyled"
+      width={200}
+      px="4"
+      mr="4"
+      placeholder="Search our cyberboard"
+      _placeholder={{ color: "cyan.800" }}
+    />
+      }
+      
       <Icon as={IoIosSearch} fontSize="20" />
     </Flex>
   );
