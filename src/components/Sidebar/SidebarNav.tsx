@@ -12,12 +12,12 @@ export function SidebarNav() {
   return (
     <Stack spacing="12" align="flex-start">
       <NavSection title="GENERAL">
-        <NavLink icon={IoPodiumOutline}>Dashboard</NavLink>
-        <NavLink icon={IoPeopleOutline}>Users</NavLink>
+        <NavLink href="/dashboard" icon={IoPodiumOutline}>Dashboard</NavLink>
+        <NavLink href="/users" icon={IoPeopleOutline}>Users</NavLink>
       </NavSection>
       <NavSection title="AUTOMATION">
-        <NavLink icon={IoDocumentTextOutline}>Forms</NavLink>
-        <NavLink icon={IoSpeedometerOutline}>Automation</NavLink>
+        <NavLink href="/forms" icon={IoDocumentTextOutline}>Forms</NavLink>
+        <NavLink href="/automation" icon={IoSpeedometerOutline}>Automation</NavLink>
       </NavSection>
     </Stack>
   );

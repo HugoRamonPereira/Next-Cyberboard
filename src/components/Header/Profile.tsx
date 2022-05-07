@@ -15,10 +15,11 @@ export function Profile({ showProfileData = true }: ProfileProps) {
       )}
       <Avatar
         size="md"
-        // mr="4" add this on mobile screen 
+        // mr="4" add this on mobile screen  
         name="Ramon Pereira"
         src="https://github.com/RamonPereira88.png"
       />
     </Flex>
   );
 }
+

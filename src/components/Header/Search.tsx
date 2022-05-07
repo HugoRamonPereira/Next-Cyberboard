@@ -1,11 +1,7 @@
 import { Flex, Input, Icon, useBreakpointValue } from "@chakra-ui/react";
 import { IoIosSearch } from "react-icons/io";
 
-interface SearchProps {
-  widenInput: boolean;
-}
-
-export function Search({ widenInput }: SearchProps) {
+export function Search() {
   const isSmallScreen = useBreakpointValue({
     base: false,
     lg: true

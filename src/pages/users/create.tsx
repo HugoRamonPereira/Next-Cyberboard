@@ -1,4 +1,5 @@
 import { Box, Button, Divider, Flex, FormLabel, Heading, HStack, Icon, SimpleGrid, VStack } from "@chakra-ui/react";
+import Link from "next/link";
 import { RiSave3Line } from "react-icons/ri"
 import { Input } from "../../components/Form/Input";
 import { Header } from "../../components/Header";
@@ -11,7 +12,7 @@ export default function CreateUser() {
          <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
             <Sidebar />
 
-            <Box flex="1" borderRadius={8} bg="gray.800" p="8" >
+            <Box flex="1" borderRadius={8} bg="gray.800" p={["6","8"]} >
               <Heading size="lg" fontWeight="normal" color="cyan.500">Create user</Heading>
               <Divider my="6" borderColor="cyan.500" />
               <VStack spacing="8" borderColor="cyan.500">
@@ -25,7 +26,7 @@ export default function CreateUser() {
                         <Input name="email" type="email"/>
                      </Box>             
                   </SimpleGrid>
-                  <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
+                  <SimpleGrid minChildWidth="240px" spacing={["6", "8"]} w="100%">
                      <Box>
                         <FormLabel htmlFor="name" color="cyan.400">Password</FormLabel>
                         <Input name="password" type="password"/>
@@ -38,8 +39,10 @@ export default function CreateUser() {
               </VStack>
               <Flex mt="8" justify="flex-end">
                  <HStack spacing="6">
-                    <Button colorScheme="whiteAlpha">Cancel</Button>
-                    <Button colorScheme="cyan" color="white" rightIcon={ <Icon as={RiSave3Line} fontSize="20" /> }> Save </Button> 
+                     <Link as="a" href="/users" passHref>
+                        <Button colorScheme="whiteAlpha">Cancel</Button>
+                     </Link>
+                     <Button colorScheme="cyan" color="white" rightIcon={ <Icon as={RiSave3Line} fontSize="20" /> }> Save </Button> 
                  </HStack>
               </Flex>
             </Box>

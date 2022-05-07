@@ -10,7 +10,6 @@ export function Header() {
   const { onOpen } = useSidebarDrawer()
 
   const isLargeScreen = useBreakpointValue({ base: false, lg: true });
-  const isSmallScreen = useBreakpointValue({ base: false, lg: true });
 
   return (
     <Flex
@@ -26,18 +25,19 @@ export function Header() {
       {!isLargeScreen && (
         <IconButton 
           aria-label="Open mobile sidebar"
-          color="cyan.500"
           icon={<Icon as={RiMenuLine} />}
+          color="cyan.500"
           fontSize="24"
           variant="unstyled"
           onClick={onOpen}
           mr="2"
+          pt="1.5" /* To align the burger icon to the middle, just like the logo */
         >
 
         </IconButton>
       )}
       <Logo />
-      <Search widenInput={isSmallScreen} />
+      { isLargeScreen && <Search />}
 
       <Flex align="center" ml="auto">
         <Notifications />
